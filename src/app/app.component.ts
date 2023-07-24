@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dynamic-layout';
+  title = 'layout';
+
+  mobileLayout: boolean = true;
+  smallNavbar: boolean = true;
+  ngOnInit(): void {
+
+  }
+
+  toggleMenuBar(event: any) {
+    console.log(event, 'heelo')
+    this.mobileLayout = event
+  }
+
+  smallMenuToogle(event: any) {
+    console.log(event, 'yes')
+    this.smallNavbar = event
+  }
 }

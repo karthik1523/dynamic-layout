@@ -1,0 +1,17 @@
+.side-navbar{
+    .logo-section{
+        padding: 0.5rem 1rem;
+    }
+    .side-navbar-menu-container{
+        padding-top: 2rem;
+        .menu-container{
+            padding: 0rem 1rem;
+            .menu{
+                padding: 1.5rem;
+                list-style: none;
+                display: flex;
+            }
+        }
+    }
+    
+}

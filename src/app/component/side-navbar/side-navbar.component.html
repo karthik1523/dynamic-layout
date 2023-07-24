@@ -1,0 +1,71 @@
+<div class="side-nav-bar-box" *ngIf="item">
+    <div class="menu-logo-container">
+        <!-- <img class="only-icon-tag" src="../assets/icons/allpos-only-icon.png" alt="all-pos-logo"> -->
+        <img class="full-image-tag"  width="100%" src="../assets/images/logo.png" alt="all-pos-logo" />
+    </div>
+    <div class="side-nav-bar-menu accordion" id="adminMenu">
+        <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a class="main-menu-item nav-link" [routerLink]="['/dashboard']" routerLinkActive="active">
+                <span class="ul-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home-2"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <rect x="10" y="12" width="4" height="4" />
+                    </svg>
+                </span>
+                <span class="nav-link-text">Dashboard</span>
+            </a>
+            </li>
+            <li class="nav-item" *ngFor="let nav of navbarList;let i = index">
+              <a class="main-menu-item  nav-link collapsed" href="#menu-buyer-tag{{i}}" data-bs-toggle="collapse"
+                  role="button" aria-expanded="false" aria-controls="menu-buyer-tag"
+                  [class.active]="getMenuActiveStatus(nav.menuName)">
+                  <span class="ul-menu-icon" [innerHTML]="nav.svg">
+                    
+                    <!-- <img [src]="nav.menuIcon"class="icon icon-tabler icon-tabler-shopping-cart"   alt=""> -->
+                  </span>
+                  <span class="nav-link-text">{{nav.menuName}}</span>
+                  <span class="direction-icon" >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <polyline points="9 6 15 12 9 18" />
+                    </svg>
+
+                  </span>
+              </a>
+              <div class="collapse sub-menu-container" id="menu-buyer-tag{{i}}" data-bs-parent="#adminMenu"
+                  [class.show]="getMenuActiveStatus(nav.menuName)">
+                  <ul class="nav nav-sm flex-column">
+                      <li class="nav-item" *ngFor="let sub of nav.subMenu">
+                          <a [routerLink]="sub.router_Link" class="sub-menu-item nav-link"
+                          [class.active]="getSubMenuActiveStatus(sub.name)">
+                              <span class="side-nav-mini-arrow">
+                                  <!-- <svg xmlns="http://www.w3.org/2000/svg"
+                                      class="icon icon-tabler icon-tabler-corner-down-right" width="24" height="24"
+                                      viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                                      stroke-linecap="round" stroke-linejoin="round">
+                                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                      <path d="M6 6v6a3 3 0 0 0 3 3h10l-4 -4m0 8l4 -4" />
+                                  </svg> -->
+                              </span>
+                              <!-- <span class="side-nav-mini-icon"> S </span> -->
+                              <span class="nav-link-text">{{sub.name}}</span>
+                          </a>
+                      </li>
+                     
+                    
+                  </ul>
+              </div>
+          </li>
+      
+           
+        </ul>
+      
+    </div>
+   
+</div>
+

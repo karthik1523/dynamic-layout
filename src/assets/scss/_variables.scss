@@ -1,0 +1,51 @@
+/* ================================================================================ */
+/*                                 Common Css variables                             */
+/* ================================================================================ */
+
+:root {
+    --app-primary-color: #003366; // #008066;
+    --app-primary-rgb: 0, 51, 102;
+    --app-side-navbar-bg:#1b2c3f;
+    --app-side-navbar-color :#8590a5;
+    --app-side-navbar-hover :white;
+    --app-top-navbar-color:#505d69;
+    
+    --app-top-navbar-bg :white;
+    --app-main-content-bg:#f3f3f4;
+    --app-main-content-primary : #343A40;
+    --app-main-content-secondary : #74788D;
+    
+
+    --app-highlight-color: #fc9c1d;
+    --app-highlight-rgb: 252, 156, 29;
+
+    --normal-card-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
+    --app-page-background: #f4f4f4;
+    --app-primary-shade-color: #ceebe5;
+    --app-background-color: rgb(243 243 249);
+
+    // border
+    --app-primary-border-color: #6ccf7454;
+
+    // button colors
+    --action-button: #51cc4e;
+    --danger-action: red;
+
+    // shadow
+    --primary-shadow: 0px 3px 6px #00000029;
+
+    // radius
+    --primary-radius: 10px/10px;
+    --secondary-radius: 5px/5px;
+
+    
+
+
+    --add-button-color: #003366;
+    --save-button-color: #003366;
+    --update-button-color: #003366;
+    --delete-button-color: #003366;
+    --cancel-button-color: #003366;
+    --back-button-color: #003366;
+    --close-button-color: #66615b;
+}

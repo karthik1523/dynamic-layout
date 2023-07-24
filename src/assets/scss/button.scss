@@ -1,0 +1,266 @@
+
+
+$button-radius: 4px;
+
+@mixin button-common {
+    display: block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+    padding: 7px 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    min-width: 100px;
+    border-radius: $button-radius;
+    outline: none !important;
+    box-shadow: none;
+    .hover-text {
+        padding-left: 8px;
+        display: none;
+    }
+}
+
+@mixin button-border-background($color, $radius: 0) {
+    background-color: $color;
+    border-color: $color;
+    // @if $radius != 0 {
+    //     border-radius: $radius;
+    // }
+    &:not([disabled]):hover {
+        // box-shadow: 0 0 10px $color;
+        // transform: translateY(-2px);
+        color: #fff;
+        box-shadow: 0 8px 25px -8px $color;
+    }
+}
+
+@mixin button-border-outline($color) {
+    background-color: transparent;
+    border-color: $color;
+    border-width: 2px;
+    
+    // font-weight: 500;
+    color: $color;
+    &:not([disabled]):hover {
+        box-shadow: 0 8px 25px -8px $color;
+        background-color: $color;
+        color: #fff;
+       
+    }
+}
+// Save Button
+.save-button {
+    @include button-common;
+    /* for fill*/
+    @include button-border-background(#766bd4);
+
+    &.outline {
+        /* for out-line*/
+        @include button-border-outline(#766bd4);
+    }
+
+    // for loader
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // for loader
+    .spinner-border {
+        margin-left: 1rem;
+        height: 1.25rem;
+        width: 1.25rem;
+        border: 0.15rem solid currentcolor;
+        border-right-color: transparent;
+    }
+}
+
+.update-button {
+    @include button-common;
+    /* for fill*/
+    @include button-border-background(#e78325);
+
+    &.outline {
+        /* for out-line*/
+        @include button-border-outline(#e78325);
+    }
+
+    // for loader
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // for loader
+    .spinner-border {
+        margin-left: 1rem;
+        height: 1.25rem;
+        width: 1.25rem;
+        border: 0.15rem solid currentcolor;
+        border-right-color: transparent;
+    }
+}
+
+
+
+.delete-button {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    background: darkred;
+   
+    min-width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete-button:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -80px;
+    height: 100px;
+    width: 70px;
+    background: rgba(255, 255, 255, .7);
+    transform: rotate(20deg);
+}
+
+.delete-button:hover:before {
+    left: 150px;
+    transition: all .5s;
+}
+//                           All Save Button
+
+.all-save-button{
+    position: relative;
+    // height: 60px;
+    min-width: 100px;
+  text-align: center;
+    border-radius: 4px;
+    border: none;
+    padding: 10px 16px;
+    outline: none;
+    background: blue;
+    color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: background 0.5s;
+  }
+  .all-save-button:first-child:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+  }
+  .all-save-button:last-child:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+  }
+  .all-save-button:first-child:before,
+  .all-save-button:last-child:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 5px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .all-save-button:first-child:hover:before,
+  .all-save-button:last-child:hover:before{
+    opacity: 1;
+    z-index: -1;
+  }
+  .all-save-button:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+  }
+  @keyframes glow {
+    0%{
+      background-position: 0%;
+    }
+    100%{
+      background-position: 400%;
+    }
+  }
+
+//                                               All Update Button
+
+.all-update-button{
+    position: relative;
+
+     min-width: 100px;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    overflow: hidden;
+    transition: 0.6s;
+  }
+  .all-update-button:first-child{
+    color: #206592;
+    border-color: #206592;
+  }
+  .all-update-button:last-child{
+    color: #ce5c0c;
+    border-color: #ce5c0c;
+  }
+  .all-update-button:before, .all-update-button:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    filter: blur(30px);
+    opacity: 0.4;
+    transition: 0.6s;
+  }
+  .all-update-button:before{
+    width: 60px;
+    background: rgba(47, 16, 56, 0.6);
+    transform: translateX(-130px) skewX(-45deg);
+  }
+  .all-update-button:after{
+    width: 30px;
+    background: rgba(26, 15, 15, 0.6);
+    transform: translateX(-130px) skewX(-45deg);
+  }
+  .all-update-button:hover:before,
+  .all-update-button:hover:after{
+    opacity: 0.6;
+    transform: translateX(320px) skewX(-45deg);
+  }
+  .all-update-button:hover{
+    color: #f2f2f2;
+  }
+  .all-update-button:hover:first-child{
+    background: #206592;
+  }
+  .all-update-button:hover:last-child{
+    background: #ce5c0c;
+  }

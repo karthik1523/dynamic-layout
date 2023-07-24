@@ -1,0 +1,323 @@
+$nav-bar-icon-height: 70px;
+
+// #ef8157
+.side-nav-bar-box {
+    // transition: all 0.3s linear;
+    color: var(--app-side-navbar-color);
+    .menu-logo-container {
+        padding: 0.5rem 1rem;
+        height: $nav-bar-icon-height;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border-bottom: 1px solid violet;
+        .full-image-tag{
+            width: 230px;
+        }
+    }
+    .side-nav-bar-menu {
+        position: relative;
+        // padding-bottom: 36px;
+        height: calc(100vh - #{$nav-bar-icon-height});
+        padding-top: 5%;
+        // background: #ffffff;
+
+        /* Main Menu styles */
+        .main-menu-item {
+            color: var(--app-side-navbar-color);
+            transition: all 0.2s ease;
+            position: relative;
+            .ul-menu-icon {
+                font-size: 1rem;
+                .icon {
+                   
+                    height: 20px;
+                    width: 20px;
+                   
+                }
+            }
+            .direction-icon{
+                font-size: 1rem;
+                position: absolute;
+                right: 5%;
+                top: 17%;
+                
+                .icon {
+                   
+                    height: 20px;
+                    width: 20px;
+                   
+                }
+            }
+            .ul-menu-icon,
+            .ul-menu-image {
+                transition: all 0.2s ease;
+                line-height: 26px;
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                margin: 0px 6px;
+                margin-right: 16px;
+                // margin-left: 8px;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 12%;
+                // background: #fff !important;
+                // -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+                // box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+                
+            }
+            .ul-menu-image {
+                padding: 6px;
+            }
+           
+            .nav-link-text {
+                transform: translateX(0);
+                transition: all 0.2s ease;
+            }
+            &.active {
+                font-weight: 600;
+      
+          
+                color: var(-app-side-navbar-hover) !important;
+        
+               
+              
+                
+              
+                // &:hover {
+                //     background: var(--main-container-background);
+                // }
+            }
+            &:hover {
+                
+                // background: var(--main-container-background);
+                color: var(--app-side-navbar-hover)!important;
+                border-radius: 0.25rem;
+            }
+        }
+        .main-menu-item.active{
+            color: var(--app-side-navbar-hover);
+          
+        }
+        .nav-item {
+             .main-menu-item{
+                &:hover{
+                    color: var(--app-side-navbar-hover) !important
+                }
+             }
+        }
+
+        /* Sub Menu styles */
+        .sub-menu-container {
+            margin: 0 8px;
+            // background-color: var(--app-background-color);
+            border-radius: 0 0 0.25rem 0.25rem;
+            ul {
+                margin: 8px;
+            }
+        }
+        .sub-menu-item {
+            // color: var(--app-primary-color);
+            transition: all 0.2s ease;
+            padding-left: 12%;
+            margin-left: 0;
+            font-weight: normal;
+            font-size: 0.9rem;
+          
+           
+            .side-nav-normal {
+                transition: all 0.2s ease;
+            }
+            &.active {
+               
+                color: var(--app-side-navbar-hover);
+                border-radius: 0.25rem;
+                font-weight: 500;
+                .side-nav-mini-icon {
+                    background: var(--main-container-background-opacity);
+                }
+            }
+            &:hover {
+                color: var(--app-side-navbar-hover);
+            }
+        }
+
+        .sub-sub-menu-item {
+            ul {
+                padding-left: 32px;
+                li {
+                    a {
+                        font-size: 14px;
+                       
+                        transition: all 0.2s ease;
+                    }
+                    a:hover {
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+
+        /* Common styles */
+        .navbar-nav .nav-link {
+            position: relative;
+            white-space: nowrap;
+            margin: 0 8px;
+        }
+     
+        .navbar-nav .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]{
+            color: var(--app-side-navbar-hover) !important;
+           
+            .direction-icon{
+                transform: rotate(270deg) !important;
+                transition: all 0.2s ease !important;
+
+            }
+        }
+      
+        // .navbar-nav.nav-link[data-bs-toggle="collapse"][aria-expanded="false"].active {
+        //     transform: rotate(90deg) !important;
+            
+          
+        // }
+         
+    }
+    .side-nav-bar-toggle-div {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+       
+    }
+}
+
+.small-side-navbar-box{
+    width: 100%;
+    .small-menu-logo-container{
+        padding: .5rem 1rem;
+        background-color: white;
+    }
+    .small-side-nav-bar-menu{
+        padding-top: 5%;
+
+
+        .navbar-nav .nav-link {
+            position: relative;
+            white-space: nowrap;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+       .main-menu-item {
+        color: var(--app-side-navbar-color);
+        transition: all 0.2s ease;
+        position: relative;
+        .ul-menu-icon {
+            font-size: 1rem;
+           
+            .icon {
+               
+                height: 40px;
+                width: 40px;
+               
+            }
+        }
+      
+        .ul-menu-icon,
+        .ul-menu-image {
+            transition: all 0.2s ease;
+            line-height: 26px;
+           
+           width: 100%;
+           
+            // margin-left: 8px;
+            text-align: center;
+            vertical-align: middle;
+          
+            // background: #fff !important;
+            // -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+            // box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+            
+        }
+       
+       
+        &.active{
+            color: var(--app-side-navbar-hover) !important;
+        }
+       
+    }
+        
+        &:hover {
+            
+            // background: var(--main-container-background);
+            color: var(--app-side-navbar-hover)!important;
+            border-radius: 0.25rem;
+        }
+       
+
+      
+      
+    }
+    
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var( --app-side-navbar-color);
+}
+
+//           dropdown css
+
+
+  
+  .dropdown {
+    width: 100%;
+    position: relative;
+    color: var(--app-side-navbar-color) !important;
+
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    
+    left: 80px;
+    top: 0px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(48, 46, 46, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: var(--app-side-navbar-color);
+    padding: 1rem .5rem;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: 0px 8px 16px 0px rgba(48, 46, 46, 0.2);
+    color: var(--app-side-navbar-hover) !important;
+  }
+  .inner-heading-dropdown{
+    background-color: var(--app-side-navbar-bg);
+    color: var(--app-side-navbar-color);
+    padding: 1rem .5rem;
+    font-weight: 600;
+  }
+ 
+
+ 
+
+
